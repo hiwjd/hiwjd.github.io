@@ -1,0 +1,15 @@
+---
+layout: post
+title:  "开篇立志"
+date:   2014-01-09 15:36:01
+categories: post
+---
+
+很早就有想法将所学所见写成博客，一直没有决心，今天就以这篇博客立下决心把。
+
+<pre>
+int main(){
+    printf("hw\n");
+    return 0;
+}
+</pre>
