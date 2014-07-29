@@ -1,3 +1,10 @@
-name: swk
+name: "王小剑"
 markdown: redcarpet
-pygments: false
+highlighter: pygments
+permalink: :title
+exclude: [README.md, LICENSE, Makefile]
+
+# Information for the Atom feed
+gereksiz:
+   author: "王小剑"
+   email: "self@hiwjd.com"
