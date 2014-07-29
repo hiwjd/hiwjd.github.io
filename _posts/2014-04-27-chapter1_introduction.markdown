@@ -5,7 +5,6 @@ date:   2014-04-07 22:26:01
 categories: post
 ---
 
-
 [原文](http://www.buildyourownlisp.com/chapter1_introduction)
 
 #关于
