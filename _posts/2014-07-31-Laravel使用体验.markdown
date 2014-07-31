@@ -1,3 +1,9 @@
+---
+layout: post
+title:  "Laravel使用体验"
+date:   2014-07-31 23:53:01
+categories: post
+---
 
 最近开发的一个项目用了Laravel
 
