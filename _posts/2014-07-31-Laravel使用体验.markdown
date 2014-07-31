@@ -12,7 +12,7 @@ categories: post
 整理了些许技巧和例子备忘
 
 > 扩展 \Illuminate\Database\Eloquent\Collection
->
+
 [文档](http://laravel.com/docs/eloquent#collections) 中`Returning A Custom Collection Type`部分有提及，但是不够详细，我乍看后并不明白其中意思。等到项目开发中有此需求时回头来细读才明白。
 用Laravel的`Form::select`时，第二个参数是这个select的options，往往options的格式是：
 {% highlight php %}
@@ -34,7 +34,7 @@ public function newCollection(array $models = Array())
 	return new CustomCollection($models);
 }
 {% endhighlight %}
-那么`CustomCollection`是个什么呢？他是我们要扩展的方法的容器，需要继承`\Illuminate\Database\Eloquent\Collection`
+那么`CustomCollection`是个什么呢？他是继承`\Illuminate\Database\Eloquent\Collection`的一个类
 {% highlight php %}
 class CustomCollection extends \Illuminate\Database\Eloquent\Collection{
     public function toOptions($params)
