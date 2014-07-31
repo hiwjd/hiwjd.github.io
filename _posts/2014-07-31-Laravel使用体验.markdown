@@ -52,4 +52,42 @@ class CustomCollection extends \Illuminate\Database\Eloquent\Collection{
 {% endhighlight %}
 这样一来，就可以使用`Model::all()->toOptions()`来得到options了。
 其实说白了，`Model::all()`，`Model::where(...)->get()`这些返回的都是`\Illuminate\Database\Eloquent\Collection`实例，你要扩展这个`Collection`自然是去继承他。最后由上面的`public function newCollection(array $models = Array())`这个方法来返回我们写好的CustomCollection实例。
+
 PS：让我想起了几天前查什么是`IoC`，看了好多解释都还不懂。。
+
+> 列表居然需要搜索的功能！！！（呵呵）
+
+打一开始我就不打算为每个列表各写一次搜索功能。这个直接用Eloquent的`scope`。直接上酸菜！
+{% highlight php %}
+public function scopeSearch($query, $conditions)
+{
+    if(empty($conditions))
+	{
+		return $query;
+	}
+
+	$searchConditions = $this->getSearchConditions();
+    $conditions = array_where($conditions, function($key, $value) use ($searchConditions)
+    {
+        return array_key_exists($key, $searchConditions) && !empty($value);
+    });
+	
+	foreach ($conditions as $key => $value)
+	{
+        $searchPattern = $searchConditions[$key];
+        if(is_array($searchPattern))
+        {
+            $query->whereHas($searchPattern[0], function($q) use ($key, $searchPattern, $value)
+            {
+                $q->where($key, $searchPattern[1], $value);
+            });
+        }
+        else
+        {
+            $query->where($key, $searchPattern, $value);
+        }
+	}
+
+    return $query;
+}
+{% endhighlight %}
