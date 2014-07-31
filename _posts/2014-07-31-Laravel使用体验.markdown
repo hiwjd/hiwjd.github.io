@@ -91,3 +91,11 @@ public function scopeSearch($query, $conditions)
     return $query;
 }
 {% endhighlight %}
+`scope`是什么意思呢？比如在User里定义`scopeWomen`，
+{% highlight php %}
+public function scopeWomen($query)
+{
+    return $query->where('female', '=', '0');
+}
+{% endhighlight %}
+调用`User::women()->all()`返回的数据全是female=0的。上面的`scopeSearch`则是把结果集限定在了搜索条件范围内了。
