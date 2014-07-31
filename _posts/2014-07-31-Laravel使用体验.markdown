@@ -7,4 +7,49 @@ categories: post
 
 最近开发的一个项目用了Laravel
 
-经过大概3个星期的开发，Laravel给我的感觉就是：“对！一直以来找的就是你！”，用着超舒心。
+经过大概3个星期的开发，Laravel给我的感觉就是：“对！找的就是你！”，用着实在是太舒心了。一直以来用PHP开发系统时，面对着各种表单操作，增删改查时很令我头痛。无法写出令自己舒心的优雅代码，导致不愿去做类似的工作，加上眼界窄技艺差，也没能积累出一套好的工具或框架。Laravel就如他的介绍一般，是一个为工匠准备的框架，令你享受coding。
+
+整理了些许技巧和例子备忘
+
+扩展 \Illuminate\Database\Eloquent\Collection
+> 
+[文档](http://laravel.com/docs/eloquent#collections) 中`Returning A Custom Collection Type`部分有提及，但是不够详细，我乍看后并不明白其中意思。等到项目开发中有此需求时回头来细读才明白。
+用Laravel的`Form::select`时，第二个参数是这个select的options，往往options的格式是：
+{% highlight php %}
+array('value1' => 'title1', 'value2' => 'title2')
+{% endhighlight %}
+我一开始的做法是：
+{% highlight php %}
+$options = array();
+Model::all()->each(function($row) use (&$options)
+{
+    $options[$row->id] = $row->name;
+});
+{% endhighlight %}
+后面有好几处都有这个需求，就想能不能扩展一个类似`Model::all()->toArray()`这样的方法，返回格式化好的options。带着需求查找文档和google，找到了方法。
+在Model类中添加如下方法：
+{% highlight php %}
+public function newCollection(array $models = Array())
+{
+	return new CustomCollection($models);
+}
+{% endhighlight %}
+那么`CustomCollection`是个什么呢？他是我们要扩展的方法的容器，需要继承`\Illuminate\Database\Eloquent\Collection`
+{% highlight php %}
+class CustomCollection extends \Illuminate\Database\Eloquent\Collection{
+    public function toOptions($params)
+    {
+        $valueKey = array_get($params, 'value', 'id');
+		$titleKey = array_get($params, 'title', 'name');
+		$optionArray = array();
+		$this->each(function($row) use (&$optionArray, $valueKey, $titleKey)
+		{
+			$optionArray[$row->{$valueKey}] = $row->{$titleKey};
+		});
+		return $optionArray;
+    }
+}
+{% endhighlight %}
+这样一来，就可以使用`Model::all()->toOptions()`来得到options了。
+其实说白了，`Model::all()`，`Model::where(...)->get()`这些返回的都是`\Illuminate\Database\Eloquent\Collection`实例，你要扩展这个`Collection`自然是去继承他。最后由上面的`public function newCollection(array $models = Array())`这个方法来返回我们写好的CustomCollection实例。
+PS：让我想起了几天前查什么是`IoC`，看了好多解释都还不懂。。
