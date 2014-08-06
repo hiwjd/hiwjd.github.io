@@ -20,6 +20,10 @@ layout: default
 <div id="SOHUCS"></div>
 <script>
   (function(){
+   mixpanel.track(
+      "read post",
+      { "post title": "{{ page.title }}" }
+   );
     var appid = 'cyriqmj16',
     conf = 'prod_df5a853552ef1041271473c4a2b97939';
     var doc = document,
