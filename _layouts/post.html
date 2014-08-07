@@ -19,6 +19,7 @@ layout: default
 <!--高速版，加载速度快，使用前需测试页面的兼容性-->
 <div id="SOHUCS"></div>
 <script>
+   mixpanel.track('view blog', {"title": "{{ page.title }}"});
   (function(){
     var appid = 'cyriqmj16',
     conf = 'prod_df5a853552ef1041271473c4a2b97939';
