@@ -1,0 +1,29 @@
+---
+layout: post
+title:  "Netty第一步"
+date:   2014-08-09 22:14:01
+categories: post
+---
+
+## Netty第一步
+*供后续开发备忘*
+
+第一个正式的JAVA项目，有用到Netty。
+目前初步想完成的一个原型是：可以接受tcp和http请求，tcp的保持连接，http的保持一定时间连接后断开。
+怎么着手开始一个陌生事物呢？打开官网，了解眼球能捕捉到的，接着找找简单的例子尝试运行吧。我这么回答自己。出发。（后续实践后再补上）
+
+> 开发环境搭建 [link](http://netty.io/wiki/setting-up-development-environment.html)
+
+选了netty 4.0.21.Final，需要`Oracle JDK 7 or above`，`maven`，`git`
+下载maven，配置对应的环境变量，cmd里`mvn --version`看看是否正确安装
+配置下git的`line ending`
+（貌似以上没有用处。。）
+
+> 运行简单例子 [link](http://netty.io/wiki/user-guide-for-4.x.html)
+
+感觉憋不出啥文字来呢。。
+就着例子结合单词意思（我擦。。），我想netty这小子要把服务起来得通过ServerBootstrap吧，ServerBootstrap管着两个EventLoopGroup（为啥要俩呢？），还得把实际处理逻辑的ChannelInboundHandlerAdapter派给ServerBootstrap。右键Run As Java Application之后，一切就那么自然的发生了。。
+
+目前对netty我就只知道这么多了，现在的关注点也不在netty身上，我现在的任务是看看怎么样把接收到http请求和tcp请求剥离成两个一样的东西，然后交给统一的后续代码去处理，处理结果回来的时候怎么样把http和tcp以他们的形式包装回去。
+
+echo server的例子能跑了，telnet后输什么回什么，很好。稍作修改把返回的内容改成"HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=utf-8\r\n\r\nHey man"，chrome打开对应地址，也能返回了。接下来怎么搞呢？又一次给自己提问。难道就在数据接收的channelRead里解析看看是不是http的包？然后分别做处理最终成一种格式的？等等，文档后面讲到了一个例子，说了种更优雅的方式，继承MessageToByteEncoder类重写decode方法，并把这个类加入到ChannelPipline的handler里去。这样一旦有数据接收到，netty会调用decode方法，在decode里解析好后再传递给后续的handler去处理。
