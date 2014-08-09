@@ -5,7 +5,6 @@ date:   2014-08-09 22:14:01
 categories: post
 ---
 
-## Netty第一步
 *供后续开发备忘*
 
 第一个正式的JAVA项目，有用到Netty。
