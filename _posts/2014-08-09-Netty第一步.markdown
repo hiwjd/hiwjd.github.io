@@ -26,3 +26,5 @@ categories: post
 目前对netty我就只知道这么多了，现在的关注点也不在netty身上，我现在的任务是看看怎么样把接收到http请求和tcp请求剥离成两个一样的东西，然后交给统一的后续代码去处理，处理结果回来的时候怎么样把http和tcp以他们的形式包装回去。
 
 echo server的例子能跑了，telnet后输什么回什么，很好。稍作修改把返回的内容改成"HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=utf-8\r\n\r\nHey man"，chrome打开对应地址，也能返回了。接下来怎么搞呢？又一次给自己提问。难道就在数据接收的channelRead里解析看看是不是http的包？然后分别做处理最终成一种格式的？等等，文档后面讲到了一个例子，说了种更优雅的方式，继承MessageToByteEncoder类重写decode方法，并把这个类加入到ChannelPipline的handler里去。这样一旦有数据接收到，netty会调用decode方法，在decode里解析好后再传递给后续的handler去处理。
+
+记录就先到此为止。
