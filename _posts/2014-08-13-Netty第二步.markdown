@@ -1,0 +1,59 @@
+---
+layout: post
+title:  "Netty第二步"
+date:   2014-08-13 22:50:01
+categories: post
+---
+
+*供后续开发备忘*
+
+经过一个下午加一个晚上的折腾，最初设想的雏形有了。
+
+为了实现支持多协议，最开始的想法是：往netty处理链里注册一个用于判断协议的过滤器，依据协议导向不同的后续处理器。浅尝之后，发现处理链的注册在最初的ServerBootstrap里，运行时貌似不能更改处理链。第二个想法浮出：当前要支持的协议有http和tcp，http不用完全兼容标准http协议，只需要能解析出http体即可，那么就自己写各种协议的解析好了，即那个用于判断协议的过滤器还得负责把各协议的请求解析包装成同一格式。
+
+虽然第二个想法有了，但心里其实还是念念不忘第一个的。想着要是以后要添加websocket等其他的支持，是不是有点麻烦呢？有现成稳定的可用还是用现成的嘛，专业的事交给专业的人去做呗。于是冲着第一个想法翻起文档，搜起谷歌。
+
+关键字：`ChannelHandlerContext`，`ChannelPipeline`
+处理链里的handler可以通过ChannelHandlerContext访问到ChannelPipeline，而ChannelPipeline可以动态增减handler。基于此，当第一个过滤器发现请求是http时，可以设置处理链为解析http协议的handlers，发现是tcp则设置处理链为解析tcp的handlers。
+附上点代码吧：
+
+{% highlight java %}
+@Override
+protected void decode(ChannelHandlerContext ctx, ByteBuf in,
+		List<Object> out) throws Exception {
+	// 通过前两个字节判断是什么协议的请求
+	while(in.readableBytes() < 2){
+		return;
+	}
+	
+	final int magic1 = in.getUnsignedByte(in.readerIndex());
+    final int magic2 = in.getUnsignedByte(in.readerIndex() + 1);
+    
+    if(isHttp(magic1, magic2)){
+    	switchToHttp(ctx);
+    }else if(isTcp(magic1, magic2)){
+    	switchToTcp(ctx);
+    }else{
+    	// 都不符合的情况
+    	byte[] response = "fuck".getBytes(Charset.forName("UTF-8"));
+	    ByteBuf b = Unpooled.wrappedBuffer(response);
+    	ctx.writeAndFlush(b);
+    	ctx.close();
+    }
+}
+
+/**
+ * 把本次连接的处理流程切换成tcp的
+ * 把当前这个判断协议类型的handler和处理http的HttpRequestDecoder从处理链中移除
+ * 在处理链的头部加上解析tcp包的TcpRequestDecoder
+ * @param ctx
+ */
+private void switchToTcp(ChannelHandlerContext ctx) {
+    ChannelPipeline p = ctx.pipeline();
+    p.addBefore("RequestFormater", "TcpRequestDecoder", new TcpRequestDecoder());
+    p.remove(this);
+    p.remove(HttpRequestDecoder.class);
+}
+{% endhighlight %}
+
+其实能耐心看看[文档](http://netty.io/4.0/api/io/netty/channel/ChannelPipeline.html)，这个问题可以马上就搞定的。
