@@ -1,43 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-   <head>
-      <meta charset="utf-8">
-      <meta name="description" content="王雨叶">
-      <meta name="author" content="王雨也">
-      <meta name="viewport" content="width=device-width">
-      <link rel="stylesheet" href="/css/syntax.css">
-      <link rel="stylesheet" href="/css/main.css">
-      <link rel="stylesheet" href="/css/normalize.css">
-      <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-      <link rel="icon" href="/favicon.ico" type="image/x-icon">
-      <style>
-         .post img{
-            width:100%;
-         }
-      </style>
-      <title>王雨叶</title>
-      <!-- start Mixpanel --><script type="text/javascript">(function(f,b){if(!b.__SV){var a,e,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
-for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="//cdn.mxpnl.com/libs/mixpanel-2.2.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);
-mixpanel.init("559cc32c2bc589f9e2509777a99b5518");mixpanel.track("view yuye picture");</script><!-- end Mixpanel -->
-   </head>
-   
-   <body>
-      <main>
-         <header>
-            <h1 class="title"><a href="/yuye.html">王雨叶</a></a></h1>
-         </header>
-         
-         <div id="home">
-            <ul class="posts">
-               <li><img src="http://wangyuye.qiniudn.com/wyy1.JPG-blog" /></li>
-               <li><img src="http://wangyuye.qiniudn.com/wyy2.JPG-blog" /></li>
-               <li><img src="http://wangyuye.qiniudn.com/wyy3.JPG-blog" /></li>
-               <li><img src="http://wangyuye.qiniudn.com/wyy4.JPG-blog" /></li>
-               <li><img src="http://wangyuye.qiniudn.com/wyy5.jpg-blog" /></li>
-               <li><img src="http://wangyuye.qiniudn.com/wyy6.JPG-blog" /></li>
-               <li><img src="http://wangyuye.qiniudn.com/wyy7.jpg" /></li>
-            </ul>
-         </div>
-      </main>
-   </body>
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href='http://fonts.useso.com/css?family=Droid+Serif|Open+Sans:400,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="vtimeline/css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="vtimeline/css/style.css"> <!-- Resource style -->
+	<script src="vtimeline/js/modernizr.js"></script> <!-- Modernizr -->
+	<script src="http://cdn.staticfile.org/vue/0.10.5/vue.min.js"></script>
+  	
+	<title>王雨叶</title>
+</head>
+<body>
+	<header>
+		<img style="width: 180px; margin-top: 35px;" src="http://wangyuye.qiniudn.com/wyy6.JPG-blog" />
+		<h1 style="margin-top: -250px;">看什么看</h1>
+	</header>
+
+	<section id="cd-timeline" class="cd-container">
+		<div v-repeat="events" class="cd-timeline-block">
+			<div class="cd-timeline-img cd-{{type}}">
+				<img src="vtimeline/img/cd-icon-{{type}}.svg" alt="{{type}}">
+			</div> <!-- cd-timeline-img -->
+
+			<div class="cd-timeline-content">
+				<h2 v-class="hidden: !title">{{title}}</h2>
+				<ul>
+					<li v-repeat="imgs"><img src="{{src}}" width="{{width ? width : 'auto'}}" alt="{{alt}}" /></li>
+				</ul>
+				<p v-class="hidden: !note">{{note}}</p>
+				<span class="cd-date">{{date}}</span>
+			</div> <!-- cd-timeline-content -->
+		</div> <!-- cd-timeline-block -->
+	</section> <!-- cd-timeline -->
+<script src="http://cdn.staticfile.org/jquery/1.11.1/jquery.min.js"></script>
+<script src="vtimeline/js/main.js"></script> <!-- Resource jQuery -->
+</body>
 </html>
