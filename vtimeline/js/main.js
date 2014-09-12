@@ -21,7 +21,7 @@
 					date: "2014.09.05",
 					note: "",
 					type: "picture",
-					title: "",
+					title: "快看！快看！！      我的下巴",
 					imgs: [{
 						src: "http://wangyuye.qiniudn.com/IMG_0453.JPG-blog",
 						width: "",
