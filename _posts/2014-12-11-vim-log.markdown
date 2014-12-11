@@ -7,9 +7,8 @@ categories: post
 
 # vim使用备忘
 
-格式化代码
+* 格式化代码
 
----
 {% highlight bash %}
 gg=G
 {% endhighlight %}
