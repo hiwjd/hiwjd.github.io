@@ -5,8 +5,6 @@ date:   2014-12-11 21:10:01
 categories: post
 ---
 
-# vim使用备忘
-
 * 格式化代码
 
 {% highlight bash %}
