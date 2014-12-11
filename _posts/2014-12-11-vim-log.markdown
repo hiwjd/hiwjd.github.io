@@ -1,0 +1,16 @@
+---
+layout: post
+title:  "VIM备忘"
+date:   2014-12-11 21:10:01
+categories: post
+---
+
+# vim使用备忘
+
+格式化代码
+
+---
+{% highlight bash %}
+gg=G
+{% endhighlight %}
+> Explanation: gg goes to the top of the file, = is a command to fix the indentation and G tells it to perform the operation to the end of the file.
