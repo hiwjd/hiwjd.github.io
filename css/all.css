@@ -42,7 +42,7 @@ a:hover { color: #2980B9; }
 
 .posts span {
    color: #aaa;
-   font-family: Monaco, "Courier New", monospace;
+   font-family: Monaco, Menlo, Consolas, 'Courier New', monospace;
    font-size: 75%;
    margin-right: 1em;
 }
@@ -258,7 +258,7 @@ code .il { color: #FF6600 } /* Literal.Number.Integer.Long */
 /* Original theme - https://github.com/chriskempson/tomorrow-theme */
 .prettyprint {
   background: #2d2d2d;
-  font-family: Menlo, 'Bitstream Vera Sans Mono', 'DejaVu Sans Mono', Monaco, Consolas, monospace;
+  font-family: Monaco, Menlo, Consolas, 'Courier New', monospace;
   font-size: 12px;
   line-height: 1.5;
   border: 1px solid #ccc;
@@ -571,7 +571,7 @@ code,
 kbd,
 pre,
 samp {
-    font-family: Menlo, Monaco, "Courier New", monospace, serif;
+    font-family: Monaco, Menlo, Consolas, 'Courier New', monospace;
     /* font-size: 1em; */
 }
 
