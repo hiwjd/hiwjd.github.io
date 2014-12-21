@@ -89,7 +89,7 @@ header a {
    color: #aaa;
 }
 
-code,
+/*code,
 pre {
    font-family: Menlo, Monaco, "Courier New", monospace;
 }
@@ -124,7 +124,7 @@ pre code {
 }
 .highlight pre {
    margin-bottom: 0;
-}
+}*/
 
 blockquote {
    padding: 0px 18px;
