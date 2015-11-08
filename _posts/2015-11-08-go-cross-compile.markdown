@@ -7,7 +7,7 @@ categories: post
 
 
 golang 1.5 交叉编译老是忘掉，记着备忘
-[https://golang.org/doc/install/source#environment](golang支持的系统和架构)
+[golang支持的系统和架构](https://golang.org/doc/install/source#environment)
 
 {% highlight bash %}
 env GOOS=linux GOARCH=arm go build
