@@ -1,13 +1,17 @@
 ---
 layout: post
-title:  "VIM备忘"
+title:  "备忘"
 date:   2014-12-11 21:10:01
 categories: post
 ---
 
-* 格式化代码
+* vim格式化代码
 
 {% highlight bash %}
 gg=G
 {% endhighlight %}
 > Explanation: gg goes to the top of the file, = is a command to fix the indentation and G tells it to perform the operation to the end of the file.
+
+* st3 多选选中 
+
+Alt+F3 on Windows and Linux, or Ctrl+Command+G on OS X
