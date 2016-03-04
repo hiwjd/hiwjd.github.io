@@ -8,4 +8,8 @@ categories: post
 
 打开键盘底部的`跳线2`
 
+<img src="/assets/realfore_jumper.jpg" />
+
 偏好设置 -> 键盘 -> 修饰键 -> 选择键盘(Realforce 87) -> Option键和Command键对调（Option键右侧选择Command, Command键右侧选择Option）
+
+<img src="/assets/key_setting.png" />
