@@ -1,6 +1,6 @@
 name: "王小剑"
 markdown: redcarpet
-highlighter: pygments
+highlighter: rouge
 permalink: :title
 exclude: [README.md, LICENSE, Makefile]
 
