@@ -5,7 +5,7 @@ date:   2016-03-17 18:10:01
 categories: post
 ---
 
-# go言真经
+# GO言真经
 
 - Don't communicate by sharing memory, share memory by communicating.
 - Concurrency is not parallelism.
