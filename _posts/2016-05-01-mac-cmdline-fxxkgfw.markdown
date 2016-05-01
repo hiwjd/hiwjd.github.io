@@ -22,6 +22,11 @@ forward-socks5   /               127.0.0.1:1080 .
 ```
 意思是转发http请求给`127.0.0.1:1080`(shadowsocks默认监听的端口)
 
+然后启动
+```
+privoxy /usr/local/etc/privoxy/config
+```
+
 最后设置命令行代理环境变量
 ```
 export http_proxy='http://127.0.0.1:8118'
