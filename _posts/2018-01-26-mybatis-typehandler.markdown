@@ -7,7 +7,7 @@ categories: post
 
 有这样一个需求：需要存类别ID的全路径，实际的逻辑意义不大，因此增加了一个类型是`varchar(500)`的字段用逗号分隔的方式来保存。
 
-但是这样一来存取时需要添加一些转换代码，有点丑。。想着能不能用`TypeHandler`来处理。
+但是这样一来存取时需要添加一些转换代码，有点丑。。想着能不能用[TypeHandler](http://www.mybatis.org/mybatis-3/zh/configuration.html#typeHandlers)来处理。
 
 ```
 List<String> -> StringSplitListStringTypeHandler -> insert,update(varchar(500))
