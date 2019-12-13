@@ -5,8 +5,6 @@ date:   2019-12-13
 categories: post
 ---
 
-# 部署备忘
-
 centos7修改主机名
 ```
 hostnamectl set-hostname xxx
