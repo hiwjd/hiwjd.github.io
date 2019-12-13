@@ -5,8 +5,6 @@ date:   2019-12-13
 categories: post
 ---
 
-# 解决mysql从库报错中断同步
-
 通过在从库执行`show slave status\G;`命令的结果来观察同步是否存在问题，主要看两个字段：`Slave_IO_Running`和`Slave_SQL_Running`，都显示`yes`时就基本没毛病了，最好到库里去看下实际的数据是否和主库一致。
 
 当`Slave_IO_Running`显示no时，表示同步binlog文件就有问题，可以检查下面几个问题：
