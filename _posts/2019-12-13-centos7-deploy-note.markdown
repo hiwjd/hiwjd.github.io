@@ -121,11 +121,12 @@ sudo systemctl enable nginx
 ```
 
 安装php
-[参考链接](https://www.linode.com/community/questions/19078/install-php-71-72-73-on-centos-7)
+[参考链接](https://www.tecmint.com/install-php-7-in-centos-7/)
 
 ```
-yum install epel-release
-yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
-yum install php73-php-fpm
-systemctl start php73-php-fpm
+yum install yum-utils
+yum-config-manager --enable remi-php73
+yum install php php-fpm php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo php-redis
+sudo systemctl start php-fpm
+sudo systemctl enable php-fpm
 ```
