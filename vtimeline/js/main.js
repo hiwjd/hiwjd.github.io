@@ -2,6 +2,7 @@
     /**
      * type: location, picture, movie
      */
+    var pictureHost = 'http://wyy.hangzhouyouyi.com/';
     var demo = new Vue({
         el: '#cd-timeline',
         data: {
@@ -12,7 +13,7 @@
                     type: "picture",
                     title: "",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/IMG_2015-06-27.jpg-blog",
+                        src: pictureHost + "IMG_2015-06-27.jpg-blog",
                         width: "",
                         alt: ""
                     }]
@@ -23,7 +24,7 @@
                     type: "picture",
                     title: "",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/IMG_2015-05-30.jpg-blog",
+                        src: pictureHost + "IMG_2015-05-30.jpg-blog",
                         width: "",
                         alt: ""
                     }]
@@ -34,7 +35,7 @@
                     type: "picture",
                     title: "",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/IMG_2015-05-09.jpg-blog",
+                        src: pictureHost + "IMG_2015-05-09.jpg-blog",
                         width: "",
                         alt: ""
                     }]
@@ -45,7 +46,7 @@
                     type: "picture",
                     title: "",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/IMG_2015-04-30.jpg-blog",
+                        src: pictureHost + "IMG_2015-04-30.jpg-blog",
                         width: "",
                         alt: ""
                     }]
@@ -56,7 +57,7 @@
                     type: "picture",
                     title: "",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/IMG_2015-04-01.jpg-blog",
+                        src: pictureHost + "IMG_2015-04-01.jpg-blog",
                         width: "",
                         alt: ""
                     }]
@@ -67,7 +68,7 @@
                     type: "picture",
                     title: "",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/IMG_2015-03-28.jpg-blog",
+                        src: pictureHost + "IMG_2015-03-28.jpg-blog",
                         width: "",
                         alt: ""
                     }]
@@ -78,7 +79,7 @@
                     type: "picture",
                     title: "",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/IMG_2015-03-02.jpg-blog",
+                        src: pictureHost + "IMG_2015-03-02.jpg-blog",
                         width: "",
                         alt: ""
                     }]
@@ -89,7 +90,7 @@
                     type: "picture",
                     title: "",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/IMG_2015-02-18.jpg-blog",
+                        src: pictureHost + "IMG_2015-02-18.jpg-blog",
                         width: "",
                         alt: ""
                     }]
@@ -100,7 +101,7 @@
                     type: "picture",
                     title: "",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/IMG_2015-02-15.jpg-blog",
+                        src: pictureHost + "IMG_2015-02-15.jpg-blog",
                         width: "",
                         alt: ""
                     }]
@@ -111,7 +112,7 @@
                     type: "picture",
                     title: "",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/IMG_2015-02-12.jpg-blog",
+                        src: pictureHost + "IMG_2015-02-12.jpg-blog",
                         width: "",
                         alt: ""
                     }]
@@ -122,7 +123,7 @@
                     type: "picture",
                     title: "",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/IMG_2015-02-05.jpg-blog",
+                        src: pictureHost + "IMG_2015-02-05.jpg-blog",
                         width: "",
                         alt: ""
                     }]
@@ -133,7 +134,7 @@
                     type: "picture",
                     title: "",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/IMG_2015-02-01.jpg-blog",
+                        src: pictureHost + "IMG_2015-02-01.jpg-blog",
                         width: "",
                         alt: ""
                     }]
@@ -144,7 +145,7 @@
                     type: "picture",
                     title: "",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/IMG_2015-01-31.jpg-blog",
+                        src: pictureHost + "IMG_2015-01-31.jpg-blog",
                         width: "",
                         alt: ""
                     }]
@@ -155,7 +156,7 @@
                     type: "picture",
                     title: "",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/IMG_2015-01-22.jpg-blog",
+                        src: pictureHost + "IMG_2015-01-22.jpg-blog",
                         width: "",
                         alt: ""
                     }]
@@ -166,7 +167,7 @@
                     type: "picture",
                     title: "",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/IMG_2015-01-18.jpg-blog",
+                        src: pictureHost + "IMG_2015-01-18.jpg-blog",
                         width: "",
                         alt: ""
                     }]
@@ -177,7 +178,7 @@
                     type: "picture",
                     title: "",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/IMG_2015-01-17.jpg-blog",
+                        src: pictureHost + "IMG_2015-01-17.jpg-blog",
                         width: "",
                         alt: ""
                     }]
@@ -188,7 +189,7 @@
                     type: "picture",
                     title: "",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/IMG_2015-01-01.jpg-blog",
+                        src: pictureHost + "IMG_2015-01-01.jpg-blog",
                         width: "",
                         alt: ""
                     }]
@@ -199,7 +200,7 @@
                     type: "picture",
                     title: "",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/IMG_2014-12-29.jpg-blog",
+                        src: pictureHost + "IMG_2014-12-29.jpg-blog",
                         width: "",
                         alt: ""
                     }]
@@ -210,7 +211,7 @@
                     type: "picture",
                     title: "",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/IMG_2014-12-24.jpg-blog",
+                        src: pictureHost + "IMG_2014-12-24.jpg-blog",
                         width: "",
                         alt: ""
                     }]
@@ -221,7 +222,7 @@
                     type: "picture",
                     title: "",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/IMG_2014-12-19.jpg-blog",
+                        src: pictureHost + "IMG_2014-12-19.jpg-blog",
                         width: "",
                         alt: ""
                     }]
@@ -232,7 +233,7 @@
                     type: "picture",
                     title: "",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/IMG_2014-12-05.jpg-blog",
+                        src: pictureHost + "IMG_2014-12-05.jpg-blog",
                         width: "",
                         alt: ""
                     }]
@@ -243,7 +244,7 @@
                     type: "picture",
                     title: "",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/IMG_2014-11-29.jpg-blog",
+                        src: pictureHost + "IMG_2014-11-29.jpg-blog",
                         width: "",
                         alt: ""
                     }]
@@ -254,7 +255,7 @@
                     type: "picture",
                     title: "",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/IMG_2014-10-26.jpg-blog",
+                        src: pictureHost + "IMG_2014-10-26.jpg-blog",
                         width: "",
                         alt: ""
                     }]
@@ -265,7 +266,7 @@
                     type: "picture",
                     title: "",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/IMG_2014-10-18.png-blog",
+                        src: pictureHost + "IMG_2014-10-18.png-blog",
                         width: "",
                         alt: ""
                     }]
@@ -276,7 +277,7 @@
                     type: "picture",
                     title: "",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/IMG_2014-10-11.png-blog",
+                        src: pictureHost + "IMG_2014-10-11.png-blog",
                         width: "",
                         alt: ""
                     }]
@@ -287,7 +288,7 @@
                     type: "picture",
                     title: "",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/IMG_2014-09-23.jpg-blog",
+                        src: pictureHost + "IMG_2014-09-23.jpg-blog",
                         width: "",
                         alt: ""
                     }]
@@ -298,7 +299,7 @@
                     type: "picture",
                     title: "",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/IMG_2014-09-22.jpg-blog",
+                        src: pictureHost + "IMG_2014-09-22.jpg-blog",
                         width: "",
                         alt: ""
                     }]
@@ -309,7 +310,7 @@
                     type: "picture",
                     title: "",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/IMG_2014-09-20.jpg-blog",
+                        src: pictureHost + "IMG_2014-09-20.jpg-blog",
                         width: "",
                         alt: ""
                     }]
@@ -320,7 +321,7 @@
                     type: "picture",
                     title: "",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/IMG_2014-09-14.jpg-blog",
+                        src: pictureHost + "IMG_2014-09-14.jpg-blog",
                         width: "",
                         alt: ""
                     }]
@@ -331,7 +332,7 @@
                     type: "picture",
                     title: "",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/xy.png-blog",
+                        src: pictureHost + "xy.png-blog",
                         width: "",
                         alt: ""
                     }]
@@ -342,7 +343,7 @@
                     type: "picture",
                     title: "快看！快看！！      我的下巴",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/IMG_0453.JPG-blog",
+                        src: pictureHost + "IMG_0453.JPG-blog",
                         width: "",
                         alt: ""
                     }]
@@ -353,7 +354,7 @@
                     type: "picture",
                     title: "",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/IMG_0443.JPG-blog",
+                        src: pictureHost + "IMG_0443.JPG-blog",
                         width: "",
                         alt: ""
                     }]
@@ -364,7 +365,7 @@
                     type: "picture",
                     title: "",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/IMG_0440.JPG-blog",
+                        src: pictureHost + "IMG_0440.JPG-blog",
                         width: "",
                         alt: ""
                     }]
@@ -375,7 +376,7 @@
                     type: "picture",
                     title: "Happy!!",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/IMG_0433.JPG-blog",
+                        src: pictureHost + "IMG_0433.JPG-blog",
                         width: "",
                         alt: ""
                     }]
@@ -386,7 +387,7 @@
                     type: "picture",
                     title: "忧桑～",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/IMG_0401.JPG-blog",
+                        src: pictureHost + "IMG_0401.JPG-blog",
                         width: "",
                         alt: ""
                     }]
@@ -397,7 +398,7 @@
                     type: "picture",
                     title: "",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/IMG_0391.JPG-blog",
+                        src: pictureHost + "IMG_0391.JPG-blog",
                         width: "",
                         alt: ""
                     }]
@@ -408,7 +409,7 @@
                     type: "picture",
                     title: "",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/IMG_0387.JPG-blog",
+                        src: pictureHost + "IMG_0387.JPG-blog",
                         width: "",
                         alt: ""
                     }]
@@ -419,7 +420,7 @@
                     type: "picture",
                     title: "",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/IMG_0377.JPG-blog",
+                        src: pictureHost + "IMG_0377.JPG-blog",
                         width: "",
                         alt: ""
                     }]
@@ -430,7 +431,7 @@
                     type: "picture",
                     title: "",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/IMG_0373.JPG-blog",
+                        src: pictureHost + "IMG_0373.JPG-blog",
                         width: "",
                         alt: ""
                     }]
@@ -441,7 +442,7 @@
                     type: "picture",
                     title: "",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/IMG_0366.JPG",
+                        src: pictureHost + "IMG_0366.JPG",
                         width: "",
                         alt: ""
                     }]
@@ -452,7 +453,7 @@
                     type: "picture",
                     title: "",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/IMG_0361.JPG",
+                        src: pictureHost + "IMG_0361.JPG",
                         width: "",
                         alt: ""
                     }]
@@ -463,7 +464,7 @@
                     type: "movie",
                     title: "",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/IMG_0347.JPG-blog",
+                        src: pictureHost + "IMG_0347.JPG-blog",
                         width: "",
                         alt: ""
                     }]
@@ -474,7 +475,7 @@
                     type: "picture",
                     title: "伐开心，要抱抱。。",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/IMG_0326.JPG-blog",
+                        src: pictureHost + "IMG_0326.JPG-blog",
                         width: "",
                         alt: ""
                     }]
@@ -485,7 +486,7 @@
                     type: "movie",
                     title: "",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/wyy5.jpg",
+                        src: pictureHost + "wyy5.jpg",
                         width: "",
                         alt: ""
                     }]
@@ -496,7 +497,7 @@
                     type: "picture",
                     title: "",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/IMG_0317.JPG-blog",
+                        src: pictureHost + "IMG_0317.JPG-blog",
                         width: "",
                         alt: ""
                     }]
@@ -507,7 +508,7 @@
                     type: "picture",
                     title: "哇！这特么就是地球？",
                     imgs: [{
-                        src: "http://wangyuye.qiniudn.com/wyy1.JPG-blog",
+                        src: pictureHost + "wyy1.JPG-blog",
                         width: "",
                         alt: ""
                     }]
