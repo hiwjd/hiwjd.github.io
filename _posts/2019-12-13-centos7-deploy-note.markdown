@@ -51,6 +51,42 @@ sudo systemctl start mysqld
 sudo mysql_secure_installation
 ```
 
+安装mysql8
+
+```
+rpm -Uvh https://repo.mysql.com/mysql80-community-release-el7-3.noarch.rpm
+
+sed -i 's/enabled=1/enabled=0/' /etc/yum.repos.d/mysql-community.repo
+
+yum --enablerepo=mysql80-community install mysql-community-server
+
+> 执行上面这步如果出现：
+> ======
+> 源 "MySQL 8.0 Community Server" 的 GPG 密钥已安装，但是不适用于此软件包。请检查源的公钥 URL 是否配置正确。
+>
+> 失败的软件包是：mysql-community-client-8.0.28-1.el7.x86_64
+> GPG  密钥配置为：file:///etc/pki/rpm-gpg/RPM-GPG-KEY-mysql
+> ======
+> 通过执行`rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022`解决
+
+service mysqld start
+
+grep "A temporary password" /var/log/mysqld.log
+
+mysql_secure_installation
+
+systemctl restart mysqld
+
+systemctl enable mysqld
+
+# Authentication plugin 'caching_sha2_password' cannot be loaded
+
+[mysqld]
+default_authentication_plugin=mysql_native_password
+
+ALTER USER 'username'@'ip_address' IDENTIFIED WITH mysql_native_password BY 'password';
+```
+
 安装redis
 [参考链接](https://www.linode.com/docs/databases/redis/install-and-configure-redis-on-centos-7/)
 
