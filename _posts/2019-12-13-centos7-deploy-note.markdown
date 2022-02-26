@@ -168,3 +168,32 @@ yum install php php-fpm php-mcrypt php-cli php-gd php-curl php-mysql php-ldap ph
 sudo systemctl start php-fpm
 sudo systemctl enable php-fpm
 ```
+
+安装snap
+[参考链接](https://snapcraft.io/docs/installing-snap-on-centos)
+
+```
+sudo yum install epel-release
+sudo yum install snapd
+sudo systemctl enable --now snapd.socket
+sudo ln -s /var/lib/snapd/snap /snap
+```
+
+安装certbot
+[参考链接](https://certbot.eff.org/instructions?ws=nginx&os=centosrhel7)
+
+```
+sudo snap install core
+sudo snap refresh core
+sudo snap install --classic certbot
+sudo ln -s /snap/bin/certbot /usr/bin/certbot
+
+# 安装ssl证书
+sudo certbot certonly --nginx
+
+# 开启自动更新证书
+sudo certbot renew --dry-run
+
+# 查看定时任务
+systemctl list-timers
+```
