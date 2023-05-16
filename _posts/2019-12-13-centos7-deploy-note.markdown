@@ -60,6 +60,9 @@ sed -i 's/enabled=1/enabled=0/' /etc/yum.repos.d/mysql-community.repo
 
 yum --enablerepo=mysql80-community install mysql-community-server
 
+# 只装mysql client
+yum --enablerepo=mysql80-community install mysql-community-client.x86_64
+
 > 执行上面这步如果出现：
 > ======
 > 源 "MySQL 8.0 Community Server" 的 GPG 密钥已安装，但是不适用于此软件包。请检查源的公钥 URL 是否配置正确。
