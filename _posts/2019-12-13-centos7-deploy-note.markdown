@@ -200,3 +200,22 @@ sudo certbot renew --dry-run
 # 查看定时任务
 systemctl list-timers
 ```
+
+修改aws centos默认用户
+
+```
+# 修改root密码
+sudo passwd root
+
+# 登录root
+su root
+
+# 修改ssh配置
+## PermitRootLogin yes
+## UsePAM no
+vi /etc/ssh/sshd_config
+
+# 修改ssh公钥
+## 只留下公钥部分
+vi /root/.ssh/authorized_keys
+```
