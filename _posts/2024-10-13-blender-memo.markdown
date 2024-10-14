@@ -1,3 +1,10 @@
+---
+layout: post
+title:  "Blender备忘"
+date:   2024-10-13
+categories: post
+---
+
 # Blender Memo
 
 ## 基础操作
