@@ -5,8 +5,6 @@ date:   2024-10-13
 categories: post
 ---
 
-# Blender Memo
-
 ## 基础操作
 
 1. 鼠标中键调整视角
