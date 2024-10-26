@@ -64,3 +64,9 @@ categories: post
 28. `Cmd+R`环切
 
 29. `M`创建集合
+
+30. `Ctrl+Tab`切换模式：`Object Mode`对象模式，`Edit Mode`编辑模式，`Weight Paint`骨骼权重绘制模式等
+
+31. 骨骼编辑模式下，`Option+P`呼出`Disconnect Bone`分离骨骼
+
+32. 骨骼命名为`.L`或者`_L`结尾，在骨骼编辑模式下，选中需要生成对成的骨骼（比如左手）或者全选，使用`Armature/Symmetrize`对称功能可以实现
