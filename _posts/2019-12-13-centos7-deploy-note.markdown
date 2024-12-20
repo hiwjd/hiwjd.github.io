@@ -149,6 +149,20 @@ sudo yum install java-1.8.0-openjdk
 sudo yum install java-1.8.0-openjdk-devel
 ```
 
+安装java17
+[参考链接](https://www.cnblogs.com/binz/p/17268441.html)
+```
+wget https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz
+
+tar zxf openjdk-17.0.2_linux-x64_bin.tar.gz
+
+vim /etc/profile
+#在unset i 上方插入以下环境 变量
+export JAVA_HOME=/home/jdk/jdk-17.0.2/
+export CLASSPATH=$JAVA_HOME/lib:$CLASSPATH
+export PATH=$JAVA_HOME/bin:$PATH
+```
+
 安装nginx
 [参考连接](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-centos-7)
 
