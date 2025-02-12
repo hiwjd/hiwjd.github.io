@@ -280,5 +280,6 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 
 ```
 ALTER USER <用户> SET search_path to '<schema>';
-并且需要注意，用户需要有该schema的USAGE权限
+# 并且需要注意，用户需要有该schema的USAGE权限
+GRANT USAGE ON SCHEMA <schema> TO <用户>;
 ```
