@@ -275,3 +275,10 @@ gpgcheck=1
 enabled=0
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 ```
+
+"修改pgsql用户的默认schema"
+
+```
+ALTER USER <用户> SET search_path to '<schema>';
+并且需要注意，用户需要有该schema的USAGE权限
+```
