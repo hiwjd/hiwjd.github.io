@@ -283,3 +283,30 @@ ALTER USER <用户> SET search_path to '<schema>';
 # 并且需要注意，用户需要有该schema的USAGE权限
 GRANT USAGE ON SCHEMA <schema> TO <用户>;
 ```
+
+安装tesseract
+
+```
+yum install libstdc++ autoconf automake libtool autoconf-archive pkg-config gcc gcc-c++ make libjpeg-devel libpng-devel libtiff-devel zlib-devel libcurl-devel
+
+wget https://github.com/DanBloomberg/leptonica/releases/download/1.79.0/leptonica-1.79.0.tar.gz
+tar -zxvf leptonica-1.74.4.tar.gz
+cd leptonica-1.74.4
+./autobuild
+./configure
+make
+make install
+cd ..
+
+wget https://github.com/tesseract-ocr/tesseract/archive/refs/tags/4.1.3.zip
+./autogen.sh
+PKG_CONFIG_PATH=/usr/local/lib/pkgconfig LIBLEPT_HEADERSDIR=/usr/local/include ./configure --with-extra-includes=/usr/local/include --with-extra-libraries=/usr/local/lib
+LDFLAGS="-L/usr/local/lib" CFLAGS="-I/usr/local/include" make
+make install
+ldconfig
+
+到下面这个仓库下载语言文件到`/usr/local/share/tessdata/`
+https://github.com/tesseract-ocr/tessdata
+
+测试`tesseract http://path/to/image stdout`
+```
