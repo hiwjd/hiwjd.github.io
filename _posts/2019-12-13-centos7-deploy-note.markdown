@@ -305,8 +305,23 @@ LDFLAGS="-L/usr/local/lib" CFLAGS="-I/usr/local/include" make
 make install
 ldconfig
 
-到下面这个仓库下载语言文件到`/usr/local/share/tessdata/`
+# 到下面这个仓库下载语言文件到`/usr/local/share/tessdata/`
 https://github.com/tesseract-ocr/tessdata
 
-测试`tesseract http://path/to/image stdout`
+# 测试`tesseract http://path/to/image stdout`
+```
+
+安装pgsql15
+
+```
+sudo yum install https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+sudo yum install postgresql15-server
+sudo /usr/pgsql-15/bin/postgresql-15-setup initdb
+sudo systemctl enable postgresql-15
+sudo systemctl start postgresql-15
+
+# 修改密码
+su postgres
+psql
+alter user postgres with password 'xxxx';
 ```
