@@ -11,6 +11,8 @@ dnf install postgresql
 
 dnf install almalinux-release-devel
 dnf install redis
+# 注意服务名称是valkey
+systemctl status valkey
 
 dnf install snapd
 snap install --classic certbot
